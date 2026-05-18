@@ -1,6 +1,24 @@
-Build-only files
-extract_notebook_graphs.py 
+# Build-only scripts (run on nibi to regenerate graphs; not needed on target)
+extract_notebook_graphs.py
 render_marimo_mimic_iii.py
 render_marimo.sbatch
 build_manifest.py
+
+# Intermediate manifest fragments (merged into graphs_manifest.json)
+static/graphs/extracted_manifest_fragment.json
+static/graphs/marimo_manifest_fragment.json
+
+# Local Python venv created by run.sh
+.venv/
+
+# SLURM logs
 logs/*
+!logs/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
