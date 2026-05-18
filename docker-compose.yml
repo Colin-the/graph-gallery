@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  graph-gallery:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_DEBUG=0
+    restart: unless-stopped

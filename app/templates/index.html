@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICU-EHR Graph Gallery</title>
+  <link rel="stylesheet" href="/app-static/style.css" />
+</head>
+<body>
+  <!-- ─── Header ──────────────────────────────────────────────────────── -->
+  <header class="app-header">
+    <div class="header-left">
+      <span class="logo">🏥</span>
+      <h1>ICU-EHR Graph Gallery</h1>
+    </div>
+    <div class="header-right">
+      <button id="btn-compare" class="btn btn-outline" title="Toggle side-by-side view">
+        ⬛ Side-by-Side
+      </button>
+      <button id="btn-show-old" class="btn btn-ghost" title="Include superseded / exploratory notebooks">
+        📦 Show All
+      </button>
+      <button id="btn-help" class="btn btn-ghost" title="Help">
+        ❓ Help
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Main layout ─────────────────────────────────────────────────── -->
+  <div class="app-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section" id="filter-panel">
+        <h2>Browse Graphs</h2>
+
+        <label class="field-label">Dataset</label>
+        <select id="sel-dataset" class="sel">
+          <option value="">— select —</option>
+        </select>
+
+        <label class="field-label">Pipeline</label>
+        <select id="sel-pipeline" class="sel" disabled>
+          <option value="">— select —</option>
+        </select>
+
+        <label class="field-label">Category</label>
+        <select id="sel-category" class="sel" disabled>
+          <option value="">— select —</option>
+        </select>
+
+        <label class="field-label">Label</label>
+        <select id="sel-label" class="sel" disabled>
+          <option value="">— any —</option>
+        </select>
+
+        <label class="field-label">Aggregation</label>
+        <select id="sel-agg" class="sel" disabled>
+          <option value="">— any —</option>
+        </select>
+
+        <label class="field-label">Graph</label>
+        <select id="sel-graph" class="sel" disabled>
+          <option value="">— select —</option>
+        </select>
+      </div>
+
+      <!-- Suggestions panel -->
+      <div class="sidebar-section" id="suggestions-panel" style="display:none">
+        <h2>💡 Suggested Comparisons</h2>
+        <ul id="suggestions-list"></ul>
+      </div>
+
+      <!-- Stats -->
+      <div class="sidebar-section" id="stats-panel">
+        <small id="gallery-stats" class="muted"></small>
+      </div>
+    </aside>
+
+    <!-- Main canvas -->
+    <main class="canvas" id="canvas">
+
+      <!-- Single view -->
+      <div id="single-view" class="view-container">
+        <div class="graph-pane" id="pane-main">
+          <div class="graph-title-bar">
+            <span id="graph-title-main" class="graph-title">Select a graph from the sidebar</span>
+          </div>
+          <div class="graph-desc" id="graph-desc-main"></div>
+          <div class="graph-tags" id="graph-tags-main"></div>
+          <div class="graph-img-wrap">
+            <img id="graph-img-main" src="" alt="" style="display:none" />
+            <div id="graph-placeholder" class="placeholder">
+              <p>Use the dropdowns on the left to browse graphs.</p>
+              <p class="muted">This gallery contains graphs from both preprocessing pipelines
+                 and the cross-pipeline comparison notebook.</p>
+            </div>
+          </div>
+          <div class="graph-actions">
+            <a id="link-download-main" href="#" download class="btn btn-sm" style="display:none">⬇ Download PNG</a>
+            <a id="link-svg-main" href="#" target="_blank" class="btn btn-sm btn-outline" style="display:none">SVG</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side-by-side view -->
+      <div id="compare-view" class="view-container" style="display:none">
+        <div class="compare-row">
+          <!-- Left pane -->
+          <div class="graph-pane compare-pane" id="pane-left">
+            <div class="compare-pane-header">
+              <span class="compare-label">Left</span>
+              <button class="btn btn-ghost btn-sm" id="btn-swap-left" title="Swap left ↔ right">⇄</button>
+            </div>
+            <div class="sidebar-section compare-controls" id="compare-controls-left">
+              <label class="field-label">Dataset</label>
+              <select id="cmp-dataset-left" class="sel sel-sm"></select>
+              <label class="field-label">Pipeline</label>
+              <select id="cmp-pipeline-left" class="sel sel-sm" disabled></select>
+              <label class="field-label">Category</label>
+              <select id="cmp-category-left" class="sel sel-sm" disabled></select>
+              <label class="field-label">Label</label>
+              <select id="cmp-label-left" class="sel sel-sm" disabled></select>
+              <label class="field-label">Aggregation</label>
+              <select id="cmp-agg-left" class="sel sel-sm" disabled></select>
+              <label class="field-label">Graph</label>
+              <select id="cmp-graph-left" class="sel sel-sm" disabled></select>
+            </div>
+            <div class="graph-title-bar">
+              <span id="graph-title-left" class="graph-title muted">—</span>
+              <span id="compare-badge-left" class="badge" style="display:none">Suggested</span>
+            </div>
+            <div class="graph-img-wrap">
+              <img id="graph-img-left" src="" alt="" style="display:none" />
+              <div class="placeholder small-placeholder" id="placeholder-left">Select a graph above</div>
+            </div>
+            <div class="graph-actions">
+              <a id="dl-left" href="#" download class="btn btn-sm" style="display:none">⬇ PNG</a>
+            </div>
+          </div>
+
+          <!-- Right pane -->
+          <div class="graph-pane compare-pane" id="pane-right">
+            <div class="compare-pane-header">
+              <span class="compare-label">Right</span>
+            </div>
+            <div class="sidebar-section compare-controls" id="compare-controls-right">
+              <label class="field-label">Dataset</label>
+              <select id="cmp-dataset-right" class="sel sel-sm"></select>
+              <label class="field-label">Pipeline</label>
+              <select id="cmp-pipeline-right" class="sel sel-sm" disabled></select>
+              <label class="field-label">Category</label>
+              <select id="cmp-category-right" class="sel sel-sm" disabled></select>
+              <label class="field-label">Label</label>
+              <select id="cmp-label-right" class="sel sel-sm" disabled></select>
+              <label class="field-label">Aggregation</label>
+              <select id="cmp-agg-right" class="sel sel-sm" disabled></select>
+              <label class="field-label">Graph</label>
+              <select id="cmp-graph-right" class="sel sel-sm" disabled></select>
+            </div>
+            <div class="graph-title-bar">
+              <span id="graph-title-right" class="graph-title muted">—</span>
+              <span id="compare-badge-right" class="badge" style="display:none">Suggested</span>
+            </div>
+            <div class="graph-img-wrap">
+              <img id="graph-img-right" src="" alt="" style="display:none" />
+              <div class="placeholder small-placeholder" id="placeholder-right">Select a graph above</div>
+            </div>
+            <div class="graph-actions">
+              <a id="dl-right" href="#" download class="btn btn-sm" style="display:none">⬇ PNG</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ─── Help modal ──────────────────────────────────────────────────── -->
+  <div id="help-modal" class="modal-overlay" style="display:none" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="btn-close-help" aria-label="Close">✕</button>
+      <h2>Graph Gallery Help</h2>
+
+      <h3>Datasets</h3>
+      <ul>
+        <li><strong>MIMIC-III</strong> — Medical Information Mart for Intensive Care III; the primary dataset for both pipelines and all comparison experiments.</li>
+        <li><strong>MIMIC-IV</strong> — Updated MIMIC with more recent data (EHR-Dataset-Processing pipeline only).</li>
+        <li><strong>eICU</strong> — eICU Collaborative Research Database (EHR-Dataset-Processing pipeline only).</li>
+        <li><strong>Cross</strong> — Pipeline comparison graphs that span both MIMIC_Extract and EHR-Dataset-Processing.</li>
+      </ul>
+
+      <h3>Pipelines</h3>
+      <ul>
+        <li><strong>MIMIC_Extract</strong> — Published Wang et al. 2020 pipeline, ported to Python 3.9 / Apptainer. Outputs 13 cohort scenario variants from a single Postgres MIMIC-III instance.</li>
+        <li><strong>EHR-Dataset-Processing</strong> — In-house pipeline supporting MIMIC-III, MIMIC-IV, and eICU. Applies 12 sequential filters (7 per-vital outlier + 4 structural) then 5 aggregation methods; uses cuML RandomForest on GPU.</li>
+        <li><strong>Comparison</strong> — Cross-pipeline notebook (<code>pipeline_comparison.ipynb</code>) comparing the two on a shared 27,295-stay MIMIC-III cohort with logistic regression / McNemar tests.</li>
+      </ul>
+
+      <h3>Aggregation Methods</h3>
+      <p>Both pipelines support the same five methods for collapsing the 24-hour timeseries into a feature vector:</p>
+      <ul>
+        <li><strong>Mean</strong> — average value per vital across all hours</li>
+        <li><strong>Median</strong> — median value per vital</li>
+        <li><strong>Standard Deviation</strong> — spread of values per vital</li>
+        <li><strong>Mean Deviation</strong> — mean absolute deviation from the mean</li>
+        <li><strong>Maximum Deviation</strong> — maximum absolute deviation</li>
+      </ul>
+
+      <h3>Labels</h3>
+      <ul>
+        <li><strong>icu / icu_los</strong> — ICU length of stay &gt; 3 days (binary)</li>
+        <li><strong>mortality</strong> — in-hospital mortality (binary)</li>
+      </ul>
+
+      <h3>Plot Types</h3>
+      <ul>
+        <li><strong>Filter Impact Bar</strong> — deviation from raw (no-filter) baseline for a given metric; green = improvement, red = degradation.</li>
+        <li><strong>McNemar Significance</strong> — −log₁₀(p-value) for each filter/scenario vs baseline; orange bars cross the p=0.05 threshold line.</li>
+        <li><strong>Centroid Shift</strong> — per-vital deviation of class centroid after filtering; shows which vitals are affected most.</li>
+        <li><strong>Centroid Distribution</strong> — density violin plots for raw vs filtered positive/negative groups per vital.</li>
+        <li><strong>Lens Plot</strong> — aggregation method × hour heatmap for a single vital in the MIMIC_Extract baseline cohort.</li>
+        <li><strong>PCA Centroid Shift</strong> — 2-D PCA scatter showing baseline (red star) vs variant scenario centroids with connector lines.</li>
+        <li><strong>Error-Bar</strong> — mean ± 1 std dev + median across scenarios for a single vital.</li>
+      </ul>
+
+      <h3>Side-by-Side Comparison</h3>
+      <p>Click <em>Side-by-Side</em> in the header to open two independent graph panes. When the left pane has a graph with known counterparts in the other pipeline, the right pane will be pre-filled with a <strong>Suggested</strong> match.</p>
+
+      <h3>Show All</h3>
+      <p>By default, superseded (older duplicate) and exploratory/sandbox notebooks are hidden. Click <em>Show All</em> to include them.</p>
+    </div>
+  </div>
+
+  <script src="/app-static/app.js"></script>
+</body>
+</html>
