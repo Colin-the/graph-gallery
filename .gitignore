@@ -8,6 +8,10 @@ build_manifest.py
 static/graphs/extracted_manifest_fragment.json
 static/graphs/marimo_manifest_fragment.json
 
+# Local developer/AI files — kept on disk but not in the repo
+CLAUDE.md
+HANDOFF.md
+
 # Local Python venv created by run.sh
 .venv/
 
