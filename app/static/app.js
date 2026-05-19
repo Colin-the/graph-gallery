@@ -223,9 +223,10 @@ function renderMainPane(record) {
   }
 
   // Suggestions
-  if (record.suggested_pairs && record.suggested_pairs.length > 0) {
+  const suggestions = findCrossPipelineSuggestions(record);
+  if (suggestions.length > 0) {
     sugList.innerHTML = "";
-    for (const s of record.suggested_pairs.slice(0, 6)) {
+    for (const s of suggestions) {
       const peer = RECORDS_BY_ID[s.id];
       if (!peer) continue;
       const li = document.createElement("li");
@@ -453,6 +454,47 @@ function updateCompareMatchCount(side) {
   const n = recs.length;
   const el = $(`match-count-${side}`);
   if (el) el.textContent = `${n} graph${n !== 1 ? "s" : ""} match current filters`;
+}
+
+// ─── Cross-pipeline suggestions ────────────────────────────────────────────
+
+function findCrossPipelineSuggestions(record) {
+  if (!record) return [];
+
+  // Candidates must be from a different pipeline but share dataset and category.
+  const candidates = visibleRecords().filter(r =>
+    r.id       !== record.id       &&
+    r.pipeline !== record.pipeline &&
+    r.dataset  === record.dataset  &&
+    r.category === record.category
+  );
+
+  if (candidates.length === 0) return [];
+
+  // Score by how many additional fields match. null === null counts as a match.
+  function scoreMatch(r) {
+    let s = 0;
+    if (r.plot_type   === record.plot_type)   s += 4;
+    if (r.label       === record.label)       s += 3;
+    if (r.aggregation === record.aggregation) s += 3;
+    if (r.vital       === record.vital)       s += 2;
+    if (r.filter      === record.filter)      s += 2;
+    return s;
+  }
+
+  return candidates
+    .map(r => ({ id: r.id, score: scoreMatch(r), why: _suggestionWhy(record, r) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 6);
+}
+
+function _suggestionWhy(from, to) {
+  const shared = [];
+  if (from.aggregation && from.aggregation === to.aggregation) shared.push(from.aggregation);
+  if (from.vital       && from.vital       === to.vital)       shared.push(from.vital);
+  if (from.label       && from.label       === to.label)       shared.push(from.label + " label");
+  if (from.filter      && from.filter      === to.filter)      shared.push(from.filter + " filter");
+  return shared.length > 0 ? "Same " + shared.join(" · ") : "Same " + from.category;
 }
 
 // ─── Utility ───────────────────────────────────────────────────────────────
