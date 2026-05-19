@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(curl -s http://localhost:8000/api/manifest)",
-      "Bash(python -c \"import json,sys; m=json.load\\(sys.stdin\\); print\\('keys:', list\\(m.keys\\(\\)\\)\\); recs=m.get\\('records',[]\\); print\\('count:', len\\(recs\\)\\); print\\('datasets:', list\\({r['dataset'] for r in recs}\\)\\)\")",
-      "Bash(docker compose up *)"
-    ]
-  }
-}
