@@ -23,6 +23,10 @@ window.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("help-modal").addEventListener("click", e => {
     if (e.target === document.getElementById("help-modal")) showModal(false);
   });
+  ["sel-dataset", "sel-pipeline", "sel-category", "sel-label", "sel-agg"].forEach(id =>
+    document.getElementById(id).addEventListener("change", updateMatchCount)
+  );
+
   document.getElementById("btn-compare").addEventListener("click", toggleCompare);
   document.getElementById("btn-toggle-controls").addEventListener("click", toggleControls);
   document.getElementById("btn-show-old").addEventListener("click", toggleShowAll);
@@ -52,7 +56,6 @@ function visibleRecords() {
   if (!MANIFEST) return [];
   return MANIFEST.records.filter(r => {
     if (r.superseded && !SHOW_ALL) return false;
-    if (r.auto_named && !SHOW_ALL && r.category === "Exploratory") return false;
     return !!r.file;
   });
 }
@@ -412,10 +415,22 @@ function showModal(show) {
 // ─── Stats ─────────────────────────────────────────────────────────────────
 function updateStats() {
   if (!MANIFEST) return;
-  const vis = visibleRecords().length;
-  const total = MANIFEST.stats.total;
-  document.getElementById("gallery-stats").textContent =
-    `${vis} graphs shown` + (SHOW_ALL ? "" : ` (${total - vis} hidden)`);
+  document.getElementById("total-count").textContent =
+    `${MANIFEST.stats.total} graphs in gallery`;
+  updateMatchCount();
+}
+
+function updateMatchCount() {
+  if (!MANIFEST) return;
+  const $ = id => document.getElementById(id);
+  let recs = visibleRecords();
+  if ($("sel-dataset").value)  recs = recs.filter(r => r.dataset      === $("sel-dataset").value);
+  if ($("sel-pipeline").value) recs = recs.filter(r => r.pipeline     === $("sel-pipeline").value);
+  if ($("sel-category").value) recs = recs.filter(r => r.category     === $("sel-category").value);
+  if ($("sel-label").value)    recs = recs.filter(r => r.label        === $("sel-label").value);
+  if ($("sel-agg").value)      recs = recs.filter(r => r.aggregation  === $("sel-agg").value);
+  const n = recs.length;
+  $("match-count").textContent = `${n} graph${n !== 1 ? "s" : ""} match current filters`;
 }
 
 // ─── Utility ───────────────────────────────────────────────────────────────
