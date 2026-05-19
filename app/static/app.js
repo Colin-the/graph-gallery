@@ -27,6 +27,13 @@ window.addEventListener("DOMContentLoaded", async () => {
     document.getElementById(id).addEventListener("change", updateMatchCount)
   );
 
+  ["left", "right"].forEach(side =>
+    ["dataset", "pipeline", "category", "label", "agg"].forEach(field =>
+      document.getElementById(`cmp-${field}-${side}`)
+        .addEventListener("change", () => updateCompareMatchCount(side))
+    )
+  );
+
   document.getElementById("btn-compare").addEventListener("click", toggleCompare);
   document.getElementById("btn-toggle-controls").addEventListener("click", toggleControls);
   document.getElementById("btn-show-old").addEventListener("click", toggleShowAll);
@@ -227,11 +234,10 @@ function renderMainPane(record) {
         <div class="why">${escHtml(s.why)} · ${escHtml(peer.pipeline)}</div>
       </button>`;
       li.querySelector("button").addEventListener("click", () => {
-        if (COMPARE_MODE) {
-          prefillComparePane("right", peer.id);
-        } else {
-          openInMain(peer.id);
-        }
+        const currentId = document.getElementById("sel-graph").value;
+        if (!COMPARE_MODE) toggleCompare();
+        if (currentId) _applyRecordToPane("left",  RECORDS_BY_ID[currentId]);
+        _applyRecordToPane("right", peer);
       });
       sugList.appendChild(li);
     }
@@ -333,6 +339,8 @@ function toggleCompare() {
     document.getElementById("btn-toggle-controls").textContent = "Hide Controls";
     populateDataset("cmp-dataset-left");
     populateDataset("cmp-dataset-right");
+    updateCompareMatchCount("left");
+    updateCompareMatchCount("right");
   }
 }
 
@@ -431,6 +439,20 @@ function updateMatchCount() {
   if ($("sel-agg").value)      recs = recs.filter(r => r.aggregation  === $("sel-agg").value);
   const n = recs.length;
   $("match-count").textContent = `${n} graph${n !== 1 ? "s" : ""} match current filters`;
+}
+
+function updateCompareMatchCount(side) {
+  if (!MANIFEST) return;
+  const $ = id => document.getElementById(id);
+  let recs = visibleRecords();
+  if ($(`cmp-dataset-${side}`).value)  recs = recs.filter(r => r.dataset      === $(`cmp-dataset-${side}`).value);
+  if ($(`cmp-pipeline-${side}`).value) recs = recs.filter(r => r.pipeline     === $(`cmp-pipeline-${side}`).value);
+  if ($(`cmp-category-${side}`).value) recs = recs.filter(r => r.category     === $(`cmp-category-${side}`).value);
+  if ($(`cmp-label-${side}`).value)    recs = recs.filter(r => r.label        === $(`cmp-label-${side}`).value);
+  if ($(`cmp-agg-${side}`).value)      recs = recs.filter(r => r.aggregation  === $(`cmp-agg-${side}`).value);
+  const n = recs.length;
+  const el = $(`match-count-${side}`);
+  if (el) el.textContent = `${n} graph${n !== 1 ? "s" : ""} match current filters`;
 }
 
 // ─── Utility ───────────────────────────────────────────────────────────────
