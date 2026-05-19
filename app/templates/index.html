@@ -17,6 +17,9 @@
       <button id="btn-compare" class="btn btn-outline" title="Toggle side-by-side view">
         ⬛ Side-by-Side
       </button>
+      <button id="btn-toggle-controls" class="btn btn-ghost" title="Hide or show the graph selection dropdowns" style="display:none">
+        Hide Controls
+      </button>
       <button id="btn-show-old" class="btn btn-ghost" title="Include superseded / exploratory notebooks">
         📦 Show All
       </button>
@@ -110,7 +113,8 @@
           <div class="graph-pane compare-pane" id="pane-left">
             <div class="compare-pane-header">
               <span class="compare-label">Left</span>
-              <button class="btn btn-ghost btn-sm" id="btn-swap-left" title="Swap left ↔ right">⇄</button>
+              <button class="btn btn-ghost btn-sm" id="btn-copy-to-right" title="Copy this graph to the right pane">Copy →</button>
+              <button class="btn btn-ghost btn-sm" id="btn-swap-left" title="Swap left ↔ right">⇄ Swap</button>
             </div>
             <div class="sidebar-section compare-controls" id="compare-controls-left">
               <label class="field-label">Dataset</label>
@@ -143,6 +147,7 @@
           <div class="graph-pane compare-pane" id="pane-right">
             <div class="compare-pane-header">
               <span class="compare-label">Right</span>
+              <button class="btn btn-ghost btn-sm" id="btn-copy-to-left" title="Copy this graph to the left pane">← Copy</button>
             </div>
             <div class="sidebar-section compare-controls" id="compare-controls-right">
               <label class="field-label">Dataset</label>

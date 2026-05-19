@@ -24,8 +24,11 @@ window.addEventListener("DOMContentLoaded", async () => {
     if (e.target === document.getElementById("help-modal")) showModal(false);
   });
   document.getElementById("btn-compare").addEventListener("click", toggleCompare);
+  document.getElementById("btn-toggle-controls").addEventListener("click", toggleControls);
   document.getElementById("btn-show-old").addEventListener("click", toggleShowAll);
-  document.getElementById("btn-swap-left").addEventListener("click", swapPanes);
+  document.getElementById("btn-swap-left").addEventListener("click",    swapPanes);
+  document.getElementById("btn-copy-to-right").addEventListener("click", () => copyPane("left",  "right"));
+  document.getElementById("btn-copy-to-left").addEventListener("click",  () => copyPane("right", "left"));
 
   updateStats();
 });
@@ -260,25 +263,6 @@ function renderPane(side, record) {
   dl.href = "/" + record.file;
   dl.download = record.id + ".png";
 
-  // When left pane selects a new graph, auto-suggest the right pane
-  if (side === "left" && record.suggested_pairs && record.suggested_pairs.length > 0) {
-    const best = record.suggested_pairs[0];
-    const peer = RECORDS_BY_ID[best.id];
-    if (peer) {
-      prefillComparePane("right", peer.id);
-      const rb = document.getElementById("compare-badge-right");
-      if (rb) { rb.textContent = "Suggested"; rb.style.display = ""; }
-    }
-  }
-  if (badge && side === "right") {
-    // Badge is set by auto-suggest logic above; clear it when user manually changes
-    // (the change event fires, we clear it here since this is a manual selection)
-    const selId = `cmp-graph-${side}`;
-    const sel = document.getElementById(selId);
-    if (sel && sel.value !== "" && badge.textContent === "Suggested") {
-      // Keep badge — it was set by suggestion logic. Clear on next manual change.
-    }
-  }
 }
 
 function buildTags(r) {
@@ -333,13 +317,30 @@ function toggleCompare() {
   COMPARE_MODE = !COMPARE_MODE;
   document.getElementById("single-view").style.display  = COMPARE_MODE ? "none" : "";
   document.getElementById("compare-view").style.display = COMPARE_MODE ? "" : "none";
+  document.getElementById("sidebar").style.display      = COMPARE_MODE ? "none" : "";
+  document.getElementById("btn-toggle-controls").style.display = COMPARE_MODE ? "" : "none";
   const btn = document.getElementById("btn-compare");
   btn.classList.toggle("active", COMPARE_MODE);
   btn.textContent = COMPARE_MODE ? "⬛ Single View" : "⬛ Side-by-Side";
   if (COMPARE_MODE) {
+    // Reset controls to visible each time compare mode is entered
+    CONTROLS_VISIBLE = true;
+    document.getElementById("compare-controls-left").style.display  = "";
+    document.getElementById("compare-controls-right").style.display = "";
+    document.getElementById("btn-toggle-controls").textContent = "Hide Controls";
     populateDataset("cmp-dataset-left");
     populateDataset("cmp-dataset-right");
   }
+}
+
+let CONTROLS_VISIBLE = true;
+
+function toggleControls() {
+  CONTROLS_VISIBLE = !CONTROLS_VISIBLE;
+  const display = CONTROLS_VISIBLE ? "" : "none";
+  document.getElementById("compare-controls-left").style.display  = display;
+  document.getElementById("compare-controls-right").style.display = display;
+  document.getElementById("btn-toggle-controls").textContent = CONTROLS_VISIBLE ? "Hide Controls" : "Show Controls";
 }
 
 function toggleShowAll() {
@@ -355,15 +356,52 @@ function toggleShowAll() {
 }
 
 function swapPanes() {
-  const leftImg   = document.getElementById("graph-img-left").src;
-  const rightImg  = document.getElementById("graph-img-right").src;
-  const leftTitle = document.getElementById("graph-title-left").textContent;
-  const rightTitle= document.getElementById("graph-title-right").textContent;
+  const leftId  = document.getElementById("cmp-graph-left").value;
+  const rightId = document.getElementById("cmp-graph-right").value;
+  const leftRec  = leftId  ? RECORDS_BY_ID[leftId]  : null;
+  const rightRec = rightId ? RECORDS_BY_ID[rightId] : null;
+  _applyRecordToPane("left",  rightRec);
+  _applyRecordToPane("right", leftRec);
+}
 
-  document.getElementById("graph-img-left").src   = rightImg;
-  document.getElementById("graph-img-right").src  = leftImg;
-  document.getElementById("graph-title-left").textContent  = rightTitle;
-  document.getElementById("graph-title-right").textContent = leftTitle;
+function copyPane(from, to) {
+  const id = document.getElementById(`cmp-graph-${from}`).value;
+  if (!id) return;
+  const record = RECORDS_BY_ID[id];
+  if (!record) return;
+  _applyRecordToPane(to, record);
+}
+
+// Drive the full cascading dropdown sequence for a compare pane so all
+// selectors reflect the given record (or clear everything if record is null).
+function _applyRecordToPane(side, record) {
+  const ds  = document.getElementById(`cmp-dataset-${side}`);
+  const pl  = document.getElementById(`cmp-pipeline-${side}`);
+  const cat = document.getElementById(`cmp-category-${side}`);
+  const lbl = document.getElementById(`cmp-label-${side}`);
+  const agg = document.getElementById(`cmp-agg-${side}`);
+  const gr  = document.getElementById(`cmp-graph-${side}`);
+
+  if (!record) {
+    // Pre-clear downstream selectors so setOptions's "restore cur value" logic
+    // finds "" and leaves them at the placeholder instead of restoring old values.
+    if (pl)  pl.value  = "";
+    if (cat) cat.value = "";
+    if (lbl) lbl.value = "";
+    if (agg) agg.value = "";
+    if (gr)  gr.value  = "";
+    if (ds)  { ds.value = ""; ds.dispatchEvent(new Event("change")); }
+    return;
+  }
+
+  // Each dispatchEvent triggers the registered cascade listener which
+  // repopulates every downstream selector synchronously.
+  if (ds)  { ds.value  = record.dataset;            ds.dispatchEvent(new Event("change")); }
+  if (pl)  { pl.value  = record.pipeline;            pl.dispatchEvent(new Event("change")); }
+  if (cat) { cat.value = record.category;           cat.dispatchEvent(new Event("change")); }
+  if (lbl) { lbl.value = record.label        || ""; lbl.dispatchEvent(new Event("change")); }
+  if (agg) { agg.value = record.aggregation  || ""; agg.dispatchEvent(new Event("change")); }
+  if (gr)  { gr.value  = record.id;                  gr.dispatchEvent(new Event("change")); }
 }
 
 // ─── Help modal ────────────────────────────────────────────────────────────
