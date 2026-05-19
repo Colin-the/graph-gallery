@@ -9,7 +9,7 @@ let COMPARE_MODE = false;
 // ─── Bootstrap ───────────────────────────────────────────────────────────────
 window.addEventListener("DOMContentLoaded", async () => {
   await loadManifest();
-  initDropdowns("", ["sel-dataset", "sel-pipeline", "sel-category", "sel-label", "sel-agg", "sel-graph"]);
+  initDropdowns("sel-", ["sel-dataset", "sel-pipeline", "sel-category", "sel-label", "sel-agg", "sel-graph"]);
   initDropdowns("cmp-", ["cmp-dataset-left", "cmp-pipeline-left", "cmp-category-left",
                          "cmp-label-left", "cmp-agg-left", "cmp-graph-left"], "left");
   initDropdowns("cmp-", ["cmp-dataset-right", "cmp-pipeline-right", "cmp-category-right",
