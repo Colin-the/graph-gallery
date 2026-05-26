@@ -20,9 +20,6 @@
       <button id="btn-toggle-controls" class="btn btn-ghost" title="Hide or show the graph selection dropdowns" style="display:none">
         Hide Controls
       </button>
-      <button id="btn-show-old" class="btn btn-ghost" title="Include superseded / exploratory notebooks">
-        📦 Show All
-      </button>
       <button id="btn-help" class="btn btn-ghost" title="Help">
         ❓ Help
       </button>
@@ -101,7 +98,7 @@
             </div>
           </div>
           <div class="graph-actions">
-            <a id="link-download-main" href="#" download class="btn btn-sm" style="display:none">⬇ Download PNG</a>
+            <a id="link-download-main" href="#" download class="btn btn-sm btn-teal" style="display:none">⬇ Download PNG</a>
             <a id="link-svg-main" href="#" target="_blank" class="btn btn-sm btn-outline" style="display:none">SVG</a>
           </div>
         </div>
@@ -141,7 +138,7 @@
               <div class="placeholder small-placeholder" id="placeholder-left">Select a graph above</div>
             </div>
             <div class="graph-actions">
-              <a id="dl-left" href="#" download class="btn btn-sm" style="display:none">⬇ PNG</a>
+              <a id="dl-left" href="#" download class="btn btn-sm btn-teal" style="display:none">⬇ PNG</a>
             </div>
           </div>
 
@@ -175,7 +172,7 @@
               <div class="placeholder small-placeholder" id="placeholder-right">Select a graph above</div>
             </div>
             <div class="graph-actions">
-              <a id="dl-right" href="#" download class="btn btn-sm" style="display:none">⬇ PNG</a>
+              <a id="dl-right" href="#" download class="btn btn-sm btn-teal" style="display:none">⬇ PNG</a>
             </div>
           </div>
         </div>
@@ -232,11 +229,35 @@
         <li><strong>Error-Bar</strong> — mean ± 1 std dev + median across scenarios for a single vital.</li>
       </ul>
 
+      <h3>EHR-Dataset-Processing Filters</h3>
+      <p>The EHR pipeline applies preprocessing filters at three levels to the 24-hour × 7-vital timeseries matrices before training the classifier.</p>
+
+      <p><strong>Value-level</strong> — remove individual out-of-range readings for one vital sign before averaging each cell:</p>
+      <ul>
+        <li><strong>heart rate</strong> — drops readings outside 1–600 bpm</li>
+        <li><strong>systolic blood pressure</strong> — drops readings outside 1–400 mmHg</li>
+        <li><strong>diastolic blood pressure</strong> — drops readings outside 1–300 mmHg</li>
+        <li><strong>mean blood pressure</strong> — drops readings outside 1–300 mmHg</li>
+        <li><strong>respiration rate</strong> — drops readings outside 1–70 breaths/min</li>
+        <li><strong>temperature</strong> — drops readings outside 21–60 °C</li>
+        <li><strong>oxygen saturation</strong> — drops readings outside 1–100%</li>
+        <li><strong>all vitals</strong> — applies all 7 per-vital outlier filters simultaneously</li>
+      </ul>
+
+      <p><strong>Feature-level</strong> — modify cells after the timeseries is flattened to a 2-D matrix:</p>
+      <ul>
+        <li><strong>fill missing data</strong> — KNN imputation (k=3) fills missing hourly values column-by-column; only applied when at least 2 valid readings exist in that vital's column</li>
+      </ul>
+
+      <p><strong>Sample-level</strong> — discard entire patient records that fail a quality threshold:</p>
+      <ul>
+        <li><strong>long missing segment</strong> — removes records where any single vital column has ≥10 consecutive missing/zero cells (i.e., a long stretch of missing data for one vital sign). <em>Note: name is ambiguous — see "long gap" below.</em></li>
+        <li><strong>long gap</strong> — removes records with ≥2 completely empty consecutive hour rows (i.e., all 7 vitals absent for 2+ hours in a row). <em>Note: name is ambiguous; this is a row-level blackout, distinct from "long missing segment" which is column-level.</em></li>
+        <li><strong>high invalid data</strong> — removes records where more than 10% of all cell values are invalid or missing</li>
+      </ul>
+
       <h3>Side-by-Side Comparison</h3>
       <p>Click <em>Side-by-Side</em> in the header to open two independent graph panes. When the left pane has a graph with known counterparts in the other pipeline, the right pane will be pre-filled with a <strong>Suggested</strong> match.</p>
-
-      <h3>Show All</h3>
-      <p>By default, superseded (older duplicate) and exploratory/sandbox notebooks are hidden. Click <em>Show All</em> to include them.</p>
     </div>
   </div>
 

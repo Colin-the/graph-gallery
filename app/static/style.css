@@ -70,6 +70,8 @@ h1 { font-size: 17px; font-weight: 600;
 .btn-ghost  { background: transparent; color: var(--muted); }
 .btn-ghost:hover { background: var(--bg-hover); color: var(--text); }
 .btn-sm { padding: 4px 8px; font-size: 12px; }
+.btn-teal { background: var(--teal); color: #111; }
+.btn-teal:hover { filter: brightness(0.88); }
 .btn.active { background: var(--purple); color: #fff; border-color: var(--purple); }
 
 /* ─── Layout ───────────────────────────────────────────────────────────── */

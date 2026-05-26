@@ -3,7 +3,6 @@
 
 let MANIFEST = null;       // full manifest JSON from /api/manifest
 let RECORDS_BY_ID = {};    // id -> record
-let SHOW_ALL = false;      // include superseded + auto_named
 let COMPARE_MODE = false;
 
 // ─── Bootstrap ───────────────────────────────────────────────────────────────
@@ -36,7 +35,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
   document.getElementById("btn-compare").addEventListener("click", toggleCompare);
   document.getElementById("btn-toggle-controls").addEventListener("click", toggleControls);
-  document.getElementById("btn-show-old").addEventListener("click", toggleShowAll);
   document.getElementById("btn-swap-left").addEventListener("click",    swapPanes);
   document.getElementById("btn-copy-to-right").addEventListener("click", () => copyPane("left",  "right"));
   document.getElementById("btn-copy-to-left").addEventListener("click",  () => copyPane("right", "left"));
@@ -61,10 +59,7 @@ async function loadManifest() {
 
 function visibleRecords() {
   if (!MANIFEST) return [];
-  return MANIFEST.records.filter(r => {
-    if (r.superseded && !SHOW_ALL) return false;
-    return !!r.file;
-  });
+  return MANIFEST.records.filter(r => !!r.file);
 }
 
 function uniqueSorted(arr) {
@@ -353,18 +348,6 @@ function toggleControls() {
   document.getElementById("compare-controls-left").style.display  = display;
   document.getElementById("compare-controls-right").style.display = display;
   document.getElementById("btn-toggle-controls").textContent = CONTROLS_VISIBLE ? "Hide Controls" : "Show Controls";
-}
-
-function toggleShowAll() {
-  SHOW_ALL = !SHOW_ALL;
-  const btn = document.getElementById("btn-show-old");
-  btn.classList.toggle("active", SHOW_ALL);
-  btn.textContent = SHOW_ALL ? "📦 Hide Old" : "📦 Show All";
-  // Refresh all selects
-  populateDataset("sel-dataset");
-  populateDataset("cmp-dataset-left");
-  populateDataset("cmp-dataset-right");
-  updateStats();
 }
 
 function swapPanes() {
