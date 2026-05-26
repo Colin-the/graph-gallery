@@ -66,28 +66,28 @@
       "source": "extracted",
       "suggested_pairs": [
         {
+          "id": "mimic_iii_0027",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0030",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0033",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0036",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0039",
+          "why": "Same mortality label"
+        },
+        {
           "id": "curated_mimic_iii_analysis_0008",
           "why": "Same mortality label"
-        },
-        {
-          "id": "curated_mimic_iii_analysis_0010",
-          "why": "Same mortality label"
-        },
-        {
-          "id": "curated_mimic_iii_analysis_0012",
-          "why": "Same mortality label"
-        },
-        {
-          "id": "curated_mimic_iii_analysis_0014",
-          "why": "Same mortality label"
-        },
-        {
-          "id": "curated_mimic_iii_analysis_0016",
-          "why": "Same mortality label"
-        },
-        {
-          "id": "curated_mimic_iii_analysis_0007",
-          "why": "Same McNemar Significance"
         }
       ]
     },
@@ -111,7 +111,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "extracted",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "mimic_iii_0040",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0043",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0046",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0049",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0052",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0055",
+          "why": "Same mean"
+        }
+      ]
     },
     {
       "id": "pipeline_comparison_0004",
@@ -133,7 +158,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "extracted",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "mimic_iii_0076",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0079",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0082",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0085",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0088",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0091",
+          "why": "Same median"
+        }
+      ]
     },
     {
       "id": "pipeline_comparison_0005",
@@ -155,7 +205,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "extracted",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "mimic_iii_0112",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0115",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0118",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0121",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0124",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0127",
+          "why": "Same standard deviation"
+        }
+      ]
     },
     {
       "id": "pipeline_comparison_0006",
@@ -177,7 +252,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "extracted",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "mimic_iii_0148",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0151",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0154",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0157",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0160",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0163",
+          "why": "Same mean deviation"
+        }
+      ]
     },
     {
       "id": "pipeline_comparison_0007",
@@ -199,7 +299,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "extracted",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "mimic_iii_0184",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0187",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0190",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0193",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0196",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0199",
+          "why": "Same maximum deviation"
+        }
+      ]
     },
     {
       "id": "pipeline_comparison_0008",
@@ -3741,7 +3866,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0007",
+          "why": "Same mean"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same mean"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0009",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0011",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same McNemar Significance"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0013",
@@ -3807,7 +3957,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0009",
+          "why": "Same median"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same median"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0007",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0011",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same McNemar Significance"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0016",
@@ -3873,7 +4048,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0011",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0007",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0009",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same McNemar Significance"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0019",
@@ -3939,7 +4139,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0013",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0014",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0007",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0009",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same McNemar Significance"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0022",
@@ -4005,7 +4230,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0015",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0016",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0007",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0009",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same McNemar Significance"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0025",
@@ -4071,7 +4321,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same mean \u00b7 mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0007",
+          "why": "Same mean"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0014",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0016",
+          "why": "Same mortality label"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0028",
@@ -4137,7 +4412,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same median \u00b7 mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0009",
+          "why": "Same median"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0014",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0016",
+          "why": "Same mortality label"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0031",
@@ -4203,7 +4503,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same standard deviation \u00b7 mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0011",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0014",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0016",
+          "why": "Same mortality label"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0034",
@@ -4269,7 +4594,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0014",
+          "why": "Same mean deviation \u00b7 mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0013",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0016",
+          "why": "Same mortality label"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0037",
@@ -4335,7 +4685,32 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "curated_mimic_iii_analysis_0016",
+          "why": "Same maximum deviation \u00b7 mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0008",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0010",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0012",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0014",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "curated_mimic_iii_analysis_0015",
+          "why": "Same maximum deviation"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0040",
@@ -4357,7 +4732,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0041",
@@ -4423,7 +4819,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0044",
@@ -4489,7 +4906,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0047",
@@ -4555,7 +4993,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0050",
@@ -4621,7 +5080,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0053",
@@ -4687,7 +5167,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0056",
@@ -4753,7 +5254,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0059",
@@ -4819,7 +5341,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0062",
@@ -4885,7 +5428,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0065",
@@ -4951,7 +5515,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0068",
@@ -5017,7 +5602,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0071",
@@ -5083,7 +5689,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same mean"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0074",
@@ -5149,7 +5776,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0077",
@@ -5215,7 +5863,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0080",
@@ -5281,7 +5950,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0083",
@@ -5347,7 +6037,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0086",
@@ -5413,7 +6124,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0089",
@@ -5479,7 +6211,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0092",
@@ -5545,7 +6298,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0095",
@@ -5611,7 +6385,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0098",
@@ -5677,7 +6472,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0101",
@@ -5743,7 +6559,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0104",
@@ -5809,7 +6646,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0107",
@@ -5875,7 +6733,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same median"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0110",
@@ -5941,7 +6820,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0113",
@@ -6007,7 +6907,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0116",
@@ -6073,7 +6994,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0119",
@@ -6139,7 +7081,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0122",
@@ -6205,7 +7168,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0125",
@@ -6271,7 +7255,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0128",
@@ -6337,7 +7342,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0131",
@@ -6403,7 +7429,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0134",
@@ -6469,7 +7516,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0137",
@@ -6535,7 +7603,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0140",
@@ -6601,7 +7690,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0143",
@@ -6667,7 +7777,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0146",
@@ -6733,7 +7864,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0149",
@@ -6799,7 +7951,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0152",
@@ -6865,7 +8038,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0155",
@@ -6931,7 +8125,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0158",
@@ -6997,7 +8212,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0161",
@@ -7063,7 +8299,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0164",
@@ -7129,7 +8386,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0167",
@@ -7195,7 +8473,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0170",
@@ -7261,7 +8560,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0173",
@@ -7327,7 +8647,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0176",
@@ -7393,7 +8734,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0179",
@@ -7459,7 +8821,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0182",
@@ -7525,7 +8908,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0185",
@@ -7591,7 +8995,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0188",
@@ -7657,7 +9082,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0191",
@@ -7723,7 +9169,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0194",
@@ -7789,7 +9256,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0197",
@@ -7855,7 +9343,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0200",
@@ -7921,7 +9430,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0203",
@@ -7987,7 +9517,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0206",
@@ -8053,7 +9604,28 @@
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
-      "suggested_pairs": []
+      "suggested_pairs": [
+        {
+          "id": "pipeline_comparison_0007",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "pipeline_comparison_0003",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0004",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0005",
+          "why": "Same Centroid Shift"
+        },
+        {
+          "id": "pipeline_comparison_0006",
+          "why": "Same Centroid Shift"
+        }
+      ]
     },
     {
       "id": "mimic_iii_0209",
@@ -8094,6 +9666,226 @@
       "file": "graphs/EHR-Dataset-Processing/mimic-iii/mimic_iii_0210.png",
       "svg": null,
       "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/mimic_iii_0210_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_0_mean_maxrange",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "mean",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean)",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_0_mean_maxrange.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_0_mean_maxrange_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_0_mean_p95",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "mean",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean) Percentile",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_0_mean_p95.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_0_mean_p95_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_1_median_maxrange",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "median",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Median)",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_1_median_maxrange.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_1_median_maxrange_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_1_median_p95",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "median",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Median) Percentile",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_1_median_p95.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_1_median_p95_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_2_standard_deviation_maxrange",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "standard deviation",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Standard Deviation)",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_2_standard_deviation_maxrange.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_2_standard_deviation_maxrange_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_2_standard_deviation_p95",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "standard deviation",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Standard Deviation) Percentile",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_2_standard_deviation_p95.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_2_standard_deviation_p95_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_3_mean_deviation_maxrange",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "mean deviation",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean Deviation)",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_3_mean_deviation_maxrange.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_3_mean_deviation_maxrange_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_3_mean_deviation_p95",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "mean deviation",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean Deviation) Percentile",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_3_mean_deviation_p95.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_3_mean_deviation_p95_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_4_maximum_deviation_maxrange",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "maximum deviation",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Maximum Deviation)",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_4_maximum_deviation_maxrange.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_4_maximum_deviation_maxrange_thumb.png",
+      "auto_named": false,
+      "superseded": false,
+      "source": "rendered",
+      "suggested_pairs": []
+    },
+    {
+      "id": "raw_baseline_4_maximum_deviation_p95",
+      "pipeline": "EHR-Dataset-Processing",
+      "dataset": "mimic-iii",
+      "notebook": "notebook_py_marimo",
+      "category": "Centroid Density",
+      "plot_type": "kde",
+      "label": null,
+      "aggregation": "maximum deviation",
+      "vital": null,
+      "scenario": null,
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Maximum Deviation) Percentile",
+      "description": "",
+      "file": "graphs/EHR-Dataset-Processing/mimic-iii/raw_baseline_4_maximum_deviation_p95.png",
+      "svg": null,
+      "thumb": "graphs/EHR-Dataset-Processing/mimic-iii/thumbs/raw_baseline_4_maximum_deviation_p95_thumb.png",
       "auto_named": false,
       "superseded": false,
       "source": "rendered",
@@ -12529,11 +14321,11 @@
       "category": "Centroid Density",
       "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "mean",
       "vital": null,
       "scenario": null,
-      "filter": "temperature",
-      "title": "Centroid Density \u2014 Temperature \u2014 (Maximum Deviation) Percentile",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean)",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0201.png",
       "svg": null,
@@ -12548,14 +14340,14 @@
       "pipeline": "EHR-Dataset-Processing",
       "dataset": "mimic-iv",
       "notebook": "notebook_py_marimo",
-      "category": "Centroid Shift",
-      "plot_type": "bar",
+      "category": "Centroid Density",
+      "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "mean",
       "vital": null,
       "scenario": null,
-      "filter": "oxygen saturation",
-      "title": "Centroid Shift \u2014 Oxygen Saturation \u2014 (Maximum Deviation)",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean) Percentile",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0202.png",
       "svg": null,
@@ -12573,11 +14365,11 @@
       "category": "Centroid Density",
       "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "median",
       "vital": null,
       "scenario": null,
-      "filter": "oxygen saturation",
-      "title": "Centroid Density \u2014 Oxygen Saturation \u2014 (Maximum Deviation)",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Median)",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0203.png",
       "svg": null,
@@ -12595,11 +14387,11 @@
       "category": "Centroid Density",
       "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "median",
       "vital": null,
       "scenario": null,
-      "filter": "oxygen saturation",
-      "title": "Centroid Density \u2014 Oxygen Saturation \u2014 (Maximum Deviation) Percentile",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Median) Percentile",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0204.png",
       "svg": null,
@@ -12614,14 +14406,14 @@
       "pipeline": "EHR-Dataset-Processing",
       "dataset": "mimic-iv",
       "notebook": "notebook_py_marimo",
-      "category": "Centroid Shift",
-      "plot_type": "bar",
+      "category": "Centroid Density",
+      "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "standard deviation",
       "vital": null,
       "scenario": null,
-      "filter": "fill missing data",
-      "title": "Centroid Shift \u2014 Fill Missing Data \u2014 (Maximum Deviation)",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Standard Deviation)",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0205.png",
       "svg": null,
@@ -12639,11 +14431,11 @@
       "category": "Centroid Density",
       "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "standard deviation",
       "vital": null,
       "scenario": null,
-      "filter": "fill missing data",
-      "title": "Centroid Density \u2014 Fill Missing Data \u2014 (Maximum Deviation)",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Standard Deviation) Percentile",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0206.png",
       "svg": null,
@@ -12661,11 +14453,11 @@
       "category": "Centroid Density",
       "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "mean deviation",
       "vital": null,
       "scenario": null,
-      "filter": "fill missing data",
-      "title": "Centroid Density \u2014 Fill Missing Data \u2014 (Maximum Deviation) Percentile",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean Deviation)",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0207.png",
       "svg": null,
@@ -12680,14 +14472,14 @@
       "pipeline": "EHR-Dataset-Processing",
       "dataset": "mimic-iv",
       "notebook": "notebook_py_marimo",
-      "category": "Centroid Shift",
-      "plot_type": "bar",
+      "category": "Centroid Density",
+      "plot_type": "kde",
       "label": null,
-      "aggregation": "maximum deviation",
+      "aggregation": "mean deviation",
       "vital": null,
       "scenario": null,
-      "filter": "long missing segment",
-      "title": "Centroid Shift \u2014 Long Missing Segment \u2014 (Maximum Deviation)",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Mean Deviation) Percentile",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0208.png",
       "svg": null,
@@ -12708,8 +14500,8 @@
       "aggregation": "maximum deviation",
       "vital": null,
       "scenario": null,
-      "filter": "long missing segment",
-      "title": "Centroid Density \u2014 Long Missing Segment \u2014 (Maximum Deviation)",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Maximum Deviation)",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0209.png",
       "svg": null,
@@ -12730,8 +14522,8 @@
       "aggregation": "maximum deviation",
       "vital": null,
       "scenario": null,
-      "filter": "long missing segment",
-      "title": "Centroid Density \u2014 Long Missing Segment \u2014 (Maximum Deviation) Percentile",
+      "filter": null,
+      "title": "Centroid Density \u2014 Raw Baseline (Maximum Deviation) Percentile",
       "description": "",
       "file": "graphs/EHR-Dataset-Processing/mimic-iv/mimic_iv_0210.png",
       "svg": null,
@@ -12917,7 +14709,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0012",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0027",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0015",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0018",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0021",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0024",
           "why": "Same McNemar Significance"
         }
       ]
@@ -12944,7 +14756,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0027",
+          "why": "Same mean \u00b7 mortality label"
+        },
+        {
+          "id": "mimic_iii_0012",
+          "why": "Same mean"
+        },
+        {
+          "id": "mimic_iii_0030",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0033",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0036",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0039",
           "why": "Same mortality label"
         }
       ]
@@ -12971,7 +14803,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0015",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0030",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0012",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0018",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0021",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0024",
           "why": "Same McNemar Significance"
         }
       ]
@@ -12998,7 +14850,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0030",
+          "why": "Same median \u00b7 mortality label"
+        },
+        {
+          "id": "mimic_iii_0015",
+          "why": "Same median"
+        },
+        {
+          "id": "mimic_iii_0027",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0033",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0036",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0039",
           "why": "Same mortality label"
         }
       ]
@@ -13025,7 +14897,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0018",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0033",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0012",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0015",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0021",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0024",
           "why": "Same McNemar Significance"
         }
       ]
@@ -13052,7 +14944,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0033",
+          "why": "Same standard deviation \u00b7 mortality label"
+        },
+        {
+          "id": "mimic_iii_0018",
+          "why": "Same standard deviation"
+        },
+        {
+          "id": "mimic_iii_0027",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0030",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0036",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0039",
           "why": "Same mortality label"
         }
       ]
@@ -13079,7 +14991,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0021",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0036",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0012",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0015",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0018",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0024",
           "why": "Same McNemar Significance"
         }
       ]
@@ -13106,7 +15038,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0036",
+          "why": "Same mean deviation \u00b7 mortality label"
+        },
+        {
+          "id": "mimic_iii_0021",
+          "why": "Same mean deviation"
+        },
+        {
+          "id": "mimic_iii_0027",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0030",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0033",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0039",
           "why": "Same mortality label"
         }
       ]
@@ -13133,7 +15085,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0024",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0039",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0012",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0015",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0018",
+          "why": "Same McNemar Significance"
+        },
+        {
+          "id": "mimic_iii_0021",
           "why": "Same McNemar Significance"
         }
       ]
@@ -13160,7 +15132,27 @@
       "source": "extracted",
       "suggested_pairs": [
         {
-          "id": "pipeline_comparison_0002",
+          "id": "mimic_iii_0039",
+          "why": "Same maximum deviation \u00b7 mortality label"
+        },
+        {
+          "id": "mimic_iii_0024",
+          "why": "Same maximum deviation"
+        },
+        {
+          "id": "mimic_iii_0027",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0030",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0033",
+          "why": "Same mortality label"
+        },
+        {
+          "id": "mimic_iii_0036",
           "why": "Same mortality label"
         }
       ]
@@ -16115,8 +18107,8 @@
     }
   ],
   "stats": {
-    "total": 729,
-    "curated": 611,
+    "total": 739,
+    "curated": 621,
     "auto_named": 118,
     "superseded": 0,
     "pipelines": [
@@ -16413,7 +18405,9 @@
               "mimic_iii_0071",
               "mimic_iii_0072",
               "mimic_iii_0074",
-              "mimic_iii_0075"
+              "mimic_iii_0075",
+              "raw_baseline_0_mean_maxrange",
+              "raw_baseline_0_mean_p95"
             ],
             "median": [
               "mimic_iii_0077",
@@ -16439,7 +18433,9 @@
               "mimic_iii_0107",
               "mimic_iii_0108",
               "mimic_iii_0110",
-              "mimic_iii_0111"
+              "mimic_iii_0111",
+              "raw_baseline_1_median_maxrange",
+              "raw_baseline_1_median_p95"
             ],
             "standard deviation": [
               "mimic_iii_0113",
@@ -16465,7 +18461,9 @@
               "mimic_iii_0143",
               "mimic_iii_0144",
               "mimic_iii_0146",
-              "mimic_iii_0147"
+              "mimic_iii_0147",
+              "raw_baseline_2_standard_deviation_maxrange",
+              "raw_baseline_2_standard_deviation_p95"
             ],
             "mean deviation": [
               "mimic_iii_0149",
@@ -16491,7 +18489,9 @@
               "mimic_iii_0179",
               "mimic_iii_0180",
               "mimic_iii_0182",
-              "mimic_iii_0183"
+              "mimic_iii_0183",
+              "raw_baseline_3_mean_deviation_maxrange",
+              "raw_baseline_3_mean_deviation_p95"
             ],
             "maximum deviation": [
               "mimic_iii_0185",
@@ -16511,7 +18511,9 @@
               "mimic_iii_0206",
               "mimic_iii_0207",
               "mimic_iii_0209",
-              "mimic_iii_0210"
+              "mimic_iii_0210",
+              "raw_baseline_4_maximum_deviation_maxrange",
+              "raw_baseline_4_maximum_deviation_p95"
             ]
           }
         }
@@ -17125,10 +19127,7 @@
               "mimic_iv_0190",
               "mimic_iv_0193",
               "mimic_iv_0196",
-              "mimic_iv_0199",
-              "mimic_iv_0202",
-              "mimic_iv_0205",
-              "mimic_iv_0208"
+              "mimic_iv_0199"
             ]
           }
         },
@@ -17158,7 +19157,9 @@
               "mimic_iv_0071",
               "mimic_iv_0072",
               "mimic_iv_0074",
-              "mimic_iv_0075"
+              "mimic_iv_0075",
+              "mimic_iv_0201",
+              "mimic_iv_0202"
             ],
             "median": [
               "mimic_iv_0077",
@@ -17184,7 +19185,9 @@
               "mimic_iv_0107",
               "mimic_iv_0108",
               "mimic_iv_0110",
-              "mimic_iv_0111"
+              "mimic_iv_0111",
+              "mimic_iv_0203",
+              "mimic_iv_0204"
             ],
             "standard deviation": [
               "mimic_iv_0113",
@@ -17210,7 +19213,9 @@
               "mimic_iv_0143",
               "mimic_iv_0144",
               "mimic_iv_0146",
-              "mimic_iv_0147"
+              "mimic_iv_0147",
+              "mimic_iv_0205",
+              "mimic_iv_0206"
             ],
             "mean deviation": [
               "mimic_iv_0149",
@@ -17236,7 +19241,9 @@
               "mimic_iv_0179",
               "mimic_iv_0180",
               "mimic_iv_0182",
-              "mimic_iv_0183"
+              "mimic_iv_0183",
+              "mimic_iv_0207",
+              "mimic_iv_0208"
             ],
             "maximum deviation": [
               "mimic_iv_0185",
@@ -17250,11 +19257,6 @@
               "mimic_iv_0197",
               "mimic_iv_0198",
               "mimic_iv_0200",
-              "mimic_iv_0201",
-              "mimic_iv_0203",
-              "mimic_iv_0204",
-              "mimic_iv_0206",
-              "mimic_iv_0207",
               "mimic_iv_0209",
               "mimic_iv_0210"
             ]
