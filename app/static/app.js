@@ -319,6 +319,9 @@ function prefillComparePane(side, id) {
 // ─── Compare / ShowAll toggles ─────────────────────────────────────────────
 
 function toggleCompare() {
+  const mainId = document.getElementById("sel-graph").value;
+  const leftId = document.getElementById("cmp-graph-left").value;
+
   COMPARE_MODE = !COMPARE_MODE;
   document.getElementById("single-view").style.display  = COMPARE_MODE ? "none" : "";
   document.getElementById("compare-view").style.display = COMPARE_MODE ? "" : "none";
@@ -337,6 +340,9 @@ function toggleCompare() {
     populateDataset("cmp-dataset-right");
     updateCompareMatchCount("left");
     updateCompareMatchCount("right");
+    if (mainId) _applyRecordToPane("left", RECORDS_BY_ID[mainId]);
+  } else {
+    if (leftId) _applyRecordToMain(RECORDS_BY_ID[leftId]);
   }
 }
 
@@ -397,6 +403,33 @@ function _applyRecordToPane(side, record) {
   if (lbl) { lbl.value = record.label        || ""; lbl.dispatchEvent(new Event("change")); }
   if (agg) { agg.value = record.aggregation  || ""; agg.dispatchEvent(new Event("change")); }
   if (gr)  { gr.value  = record.id;                  gr.dispatchEvent(new Event("change")); }
+}
+
+// Drive the full cascading dropdown sequence for the main pane.
+function _applyRecordToMain(record) {
+  const ds  = document.getElementById("sel-dataset");
+  const pl  = document.getElementById("sel-pipeline");
+  const cat = document.getElementById("sel-category");
+  const lbl = document.getElementById("sel-label");
+  const agg = document.getElementById("sel-agg");
+  const gr  = document.getElementById("sel-graph");
+
+  if (!record) {
+    if (pl)  pl.value  = "";
+    if (cat) cat.value = "";
+    if (lbl) lbl.value = "";
+    if (agg) agg.value = "";
+    if (gr)  gr.value  = "";
+    if (ds)  { ds.value = ""; ds.dispatchEvent(new Event("change")); }
+    return;
+  }
+
+  if (ds)  { ds.value  = record.dataset;           ds.dispatchEvent(new Event("change")); }
+  if (pl)  { pl.value  = record.pipeline;           pl.dispatchEvent(new Event("change")); }
+  if (cat) { cat.value = record.category;          cat.dispatchEvent(new Event("change")); }
+  if (lbl) { lbl.value = record.label       || ""; lbl.dispatchEvent(new Event("change")); }
+  if (agg) { agg.value = record.aggregation || ""; agg.dispatchEvent(new Event("change")); }
+  if (gr)  { gr.value  = record.id;                gr.dispatchEvent(new Event("change")); }
 }
 
 // ─── Help modal ────────────────────────────────────────────────────────────
