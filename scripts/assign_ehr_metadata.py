@@ -44,6 +44,7 @@ FILTERS = [
     "all vitals",
 ]
 LENGTH_STAT_METHODS = ["mean", "median", "std", "max", "min"]
+RAW_BASELINE_COUNT = len(AGGREGATION_METHODS) * 2  # 10: 5 agg x 2 (normal + percentile)
 
 
 def classify(width: int, height: int) -> str:
@@ -174,19 +175,42 @@ def build_metadata(idx: int, ptype: str, dataset: str) -> dict:
 def assign_dataset(dataset: str, records_by_id: dict[str, dict]) -> int:
     ehr_dir = GRAPHS_DIR / "EHR-Dataset-Processing" / dataset
     pngs = sorted([p for p in ehr_dir.glob("*.png") if "thumbs" not in str(p)])
+    total = len(pngs)
+
+    # Raw baseline images (raw-only centroid density) are appended at the end of the
+    # notebook output. Only mimic-iii/iv have them; eicu notebook not regenerated.
+    has_raw_baseline = dataset in ("mimic-iii", "mimic-iv")
+    raw_start = total - RAW_BASELINE_COUNT if has_raw_baseline else total + 1
 
     updated = 0
     for idx, png_path in enumerate(pngs):
         with Image.open(png_path) as img:
             ptype = classify(*img.size)
 
+        if idx >= raw_start:
+            raw_idx = idx - raw_start
+            agg_idx = raw_idx // 2
+            is_percentile = bool(raw_idx % 2)
+            agg = AGGREGATION_METHODS[agg_idx] if agg_idx < len(AGGREGATION_METHODS) else None
+            suffix = " Percentile" if is_percentile else ""
+            meta = {
+                "category": "Centroid Density",
+                "plot_type": "kde",
+                "aggregation": agg,
+                "label": None,
+                "filter": None,
+                "title": (f"Centroid Density — Raw Baseline ({agg.title()}){suffix}"
+                          if agg else f"Centroid Density — Raw Baseline{suffix}"),
+                "auto_named": False,
+            }
+        else:
+            meta = build_metadata(idx, ptype, dataset)
+
         rec_id = png_path.stem
         rec = records_by_id.get(rec_id)
         if rec is None:
             print(f"  Warning: no manifest record for {rec_id}")
             continue
-
-        meta = build_metadata(idx, ptype, dataset)
         rec.update(meta)
         updated += 1
 
