@@ -256,6 +256,35 @@
         <li><strong>high invalid data</strong> — removes records where more than 10% of all cell values are invalid or missing</li>
       </ul>
 
+      <h3>MIMIC_Extract Cohort Scenarios</h3>
+      <p>The MIMIC_Extract pipeline does not apply preprocessing filters; instead it produces 13 distinct cohorts by varying cohort-selection parameters at extraction time. Each scenario is an independent dataset with different patient inclusion criteria.</p>
+
+      <p><strong>Cohort-selection parameters:</strong></p>
+      <ul>
+        <li><strong>min_age / max_age</strong> — admission age bounds (years); default is 15–999 (no upper limit)</li>
+        <li><strong>min_duration / max_duration</strong> — ICU stay length bounds (hours); default is 12–240 hours</li>
+        <li><strong>min_percent</strong> — drops any vital/lab column with more than <code>(100 − min_percent)%</code> missing values across the cohort; default 0 (keep all columns)</li>
+        <li><strong>pop_size</strong> — caps the cohort to the first N ICU stays; 0 = no cap (full dataset)</li>
+      </ul>
+
+      <p><strong>The 13 scenarios:</strong></p>
+      <ul>
+        <li><strong>pop5000</strong> — 5,000-stay subset of the full cohort (pop_size=5000); useful as a fast baseline</li>
+        <li><strong>min48hr</strong> — ICU stays of 48–240 hours only; excludes short admissions</li>
+        <li><strong>min18age</strong> — adult patients only (min_age=18)</li>
+        <li><strong>minperc5</strong> — stricter data quality: drops any vital/lab column with &gt;95% missing values (min_percent=5)</li>
+        <li><strong>age35_range5</strong> — patients aged 33–37 (target age 35, ±2 years)</li>
+        <li><strong>age35_range10</strong> — patients aged 30–40 (target age 35, ±5 years)</li>
+        <li><strong>age35_range15</strong> — patients aged 28–42 (target age 35, ±7 years)</li>
+        <li><strong>age45_range5</strong> — patients aged 43–47 (target age 45, ±2 years)</li>
+        <li><strong>age45_range10</strong> — patients aged 40–50 (target age 45, ±5 years)</li>
+        <li><strong>age45_range15</strong> — patients aged 38–52 (target age 45, ±7 years)</li>
+        <li><strong>age55_range5</strong> — patients aged 53–57 (target age 55, ±2 years)</li>
+        <li><strong>age55_range10</strong> — patients aged 50–60 (target age 55, ±5 years)</li>
+        <li><strong>age55_range15</strong> — patients aged 48–62 (target age 55, ±7 years)</li>
+      </ul>
+      <p>The three age-targeted groups (35 / 45 / 55) each come in three window widths (range5/10/15), allowing comparison of how cohort age-range breadth affects model behaviour.</p>
+
       <h3>Side-by-Side Comparison</h3>
       <p>Click <em>Side-by-Side</em> in the header to open two independent graph panes. When the left pane has a graph with known counterparts in the other pipeline, the right pane will be pre-filled with a <strong>Suggested</strong> match.</p>
     </div>
