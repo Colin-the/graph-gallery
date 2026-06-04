@@ -306,6 +306,93 @@ h1 { font-size: 17px; font-weight: 600;
 }
 .modal-close:hover { color: var(--text); }
 
+/* ─── User tags (custom tag assignments) ─────────────────────────────── */
+.user-tags-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-height: 24px;
+}
+.user-tag-list {
+  list-style: none;
+  display: contents;
+}
+.user-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  padding: 2px 5px 2px 8px;
+  border-radius: 20px;
+  background: rgba(78, 213, 149, 0.1);
+  border: 1px solid var(--teal);
+  color: var(--teal);
+}
+.user-tag-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.7;
+}
+.user-tag-remove:hover { opacity: 1; }
+
+/* ─── Tag manager (sidebar panel) ────────────────────────────────────── */
+.tag-manager-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+#tag-manager-panel h2 { margin-bottom: 0; }
+.tag-create-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.tag-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 5px 8px;
+  font-size: 12px;
+  outline: none;
+}
+.tag-input:focus { border-color: var(--teal); }
+#tag-manager-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#tag-manager-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 8px;
+  font-size: 12px;
+}
+#tag-manager-list li .tag-delete {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+}
+#tag-manager-list li .tag-delete:hover { color: #bd3140; }
+
 /* ─── Scrollbar ──────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }

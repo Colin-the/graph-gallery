@@ -5,17 +5,20 @@ Routes:
   GET /                  -> index.html
   GET /api/manifest      -> graphs_manifest.json
   GET /graphs/<path>     -> static PNG/SVG images
+  GET /api/tags          -> tags.json (custom user tags)
+  POST /api/tags         -> overwrite tags.json
 """
 
 import json
 import os
 from pathlib import Path
 
-from flask import Flask, abort, jsonify, render_template, send_from_directory
+from flask import Flask, abort, jsonify, render_template, request, send_from_directory
 
 GALLERY_ROOT = Path(__file__).parent.parent.resolve()
 GRAPHS_DIR = GALLERY_ROOT / "static" / "graphs"
 MANIFEST_PATH = GALLERY_ROOT / "graphs_manifest.json"
+TAGS_PATH = GALLERY_ROOT / "tags.json"
 
 app = Flask(
     __name__,
@@ -37,6 +40,24 @@ def manifest():
     with open(MANIFEST_PATH) as f:
         data = json.load(f)
     return jsonify(data)
+
+
+@app.route("/api/tags", methods=["GET"])
+def get_tags():
+    if not TAGS_PATH.exists():
+        return jsonify({"tags": [], "assignments": {}})
+    with open(TAGS_PATH) as f:
+        return jsonify(json.load(f))
+
+
+@app.route("/api/tags", methods=["POST"])
+def save_tags():
+    data = request.get_json(force=True)
+    if not isinstance(data, dict) or "tags" not in data or "assignments" not in data:
+        abort(400, "Invalid tags payload")
+    with open(TAGS_PATH, "w") as f:
+        json.dump(data, f, indent=2)
+    return jsonify({"ok": True})
 
 
 @app.route("/graphs/<path:filepath>")

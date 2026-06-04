@@ -8,6 +8,7 @@ RUN pip install --no-cache-dir flask gunicorn
 # Copy app source
 COPY app/ ./app/
 COPY graphs_manifest.json .
+COPY tags.json .
 
 # Copy all generated graph images (populated by extract/render scripts before build)
 COPY static/graphs/ ./static/graphs/

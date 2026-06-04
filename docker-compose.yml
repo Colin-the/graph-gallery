@@ -7,3 +7,5 @@ services:
       - FLASK_DEBUG=0
     restart: unless-stopped
     mem_limit: 512m
+    volumes:
+      - ./tags.json:/app/tags.json

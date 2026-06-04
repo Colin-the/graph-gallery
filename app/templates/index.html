@@ -64,6 +64,26 @@
         <select id="sel-graph" class="sel" disabled>
           <option value="">— select —</option>
         </select>
+
+        <label class="field-label">Tag</label>
+        <select id="sel-tag" class="sel">
+          <option value="">— any —</option>
+        </select>
+      </div>
+
+      <!-- Tag manager panel -->
+      <div class="sidebar-section" id="tag-manager-panel">
+        <div class="tag-manager-header">
+          <h2>🏷 My Tags</h2>
+          <button id="btn-toggle-tag-mgr" class="btn btn-ghost btn-sm">▶</button>
+        </div>
+        <div id="tag-manager-body" style="display:none">
+          <div class="tag-create-row">
+            <input type="text" id="tag-new-name" class="tag-input" placeholder="New tag…" maxlength="40" />
+            <button id="btn-create-tag" class="btn btn-sm btn-teal">Add</button>
+          </div>
+          <ul id="tag-manager-list"></ul>
+        </div>
       </div>
 
       <!-- Suggestions panel -->
@@ -89,6 +109,12 @@
           </div>
           <div class="graph-desc" id="graph-desc-main"></div>
           <div class="graph-tags" id="graph-tags-main"></div>
+          <div class="user-tags-section" id="user-tags-main" style="display:none">
+            <ul class="user-tag-list" id="user-tag-list-main"></ul>
+            <select id="sel-add-tag-main" class="sel sel-sm" style="width:auto">
+              <option value="">+ add tag…</option>
+            </select>
+          </div>
           <div class="graph-img-wrap">
             <img id="graph-img-main" src="" alt="" style="display:none" />
             <div id="graph-placeholder" class="placeholder">

@@ -4,10 +4,13 @@
 let MANIFEST = null;       // full manifest JSON from /api/manifest
 let RECORDS_BY_ID = {};    // id -> record
 let COMPARE_MODE = false;
+let TAGS_DATA = { tags: [], assignments: {} };
+let CURRENT_MAIN_RECORD = null;  // track which record is displayed in main pane
 
 // ─── Bootstrap ───────────────────────────────────────────────────────────────
 window.addEventListener("DOMContentLoaded", async () => {
   await loadManifest();
+  await loadTags();
   initDropdowns("sel-", ["sel-dataset", "sel-pipeline", "sel-category", "sel-label", "sel-agg", "sel-graph"]);
   initDropdowns("cmp-", ["cmp-dataset-left", "cmp-pipeline-left", "cmp-category-left",
                          "cmp-label-left", "cmp-agg-left", "cmp-graph-left"], "left");
@@ -39,6 +42,37 @@ window.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("btn-copy-to-right").addEventListener("click", () => copyPane("left",  "right"));
   document.getElementById("btn-copy-to-left").addEventListener("click",  () => copyPane("right", "left"));
 
+  // Tag filter: re-cascade from dataset when tag selection changes
+  document.getElementById("sel-tag").addEventListener("change", () => {
+    populateDataset("sel-dataset");
+    document.getElementById("sel-dataset").dispatchEvent(new Event("change"));
+    updateMatchCount();
+  });
+
+  // Tag manager toggle
+  document.getElementById("btn-toggle-tag-mgr").addEventListener("click", () => {
+    const body = document.getElementById("tag-manager-body");
+    const btn  = document.getElementById("btn-toggle-tag-mgr");
+    const open = body.style.display === "none";
+    body.style.display = open ? "" : "none";
+    btn.textContent    = open ? "▼" : "▶";
+  });
+
+  // Create tag
+  document.getElementById("btn-create-tag").addEventListener("click", createTag);
+  document.getElementById("tag-new-name").addEventListener("keydown", e => {
+    if (e.key === "Enter") createTag();
+  });
+
+  // Add tag to current graph
+  document.getElementById("sel-add-tag-main").addEventListener("change", e => {
+    const tag = e.target.value;
+    if (tag && CURRENT_MAIN_RECORD) {
+      addTagToGraph(CURRENT_MAIN_RECORD.id, tag);
+    }
+    e.target.value = "";
+  });
+
   updateStats();
 });
 
@@ -59,7 +93,12 @@ async function loadManifest() {
 
 function visibleRecords() {
   if (!MANIFEST) return [];
-  return MANIFEST.records.filter(r => !!r.file);
+  let recs = MANIFEST.records.filter(r => !!r.file);
+  const tagFilter = document.getElementById("sel-tag")?.value;
+  if (tagFilter) {
+    recs = recs.filter(r => (TAGS_DATA.assignments[r.id] || []).includes(tagFilter));
+  }
+  return recs;
 }
 
 function uniqueSorted(arr) {
@@ -175,6 +214,7 @@ function onGraphSelected(graphSelId, pane = null) {
 }
 
 function renderMainPane(record) {
+  CURRENT_MAIN_RECORD = record;
   const img    = document.getElementById("graph-img-main");
   const title  = document.getElementById("graph-title-main");
   const desc   = document.getElementById("graph-desc-main");
@@ -194,6 +234,7 @@ function renderMainPane(record) {
     title.textContent = "Select a graph from the sidebar";
     desc.textContent = "";
     tags.innerHTML = "";
+    renderCustomTags(null);
     return;
   }
 
@@ -201,6 +242,7 @@ function renderMainPane(record) {
   title.textContent = record.title;
   desc.textContent = record.description || "";
   tags.innerHTML = buildTags(record);
+  renderCustomTags(record);
 
   img.style.display = "";
   img.src = "/" + record.file;
@@ -282,6 +324,153 @@ function buildTags(r) {
     r.auto_named ? `<span class="tag" style="color:#888">auto-named</span>` : "",
   ];
   return items.filter(Boolean).join("");
+}
+
+// ─── Tag management ───────────────────────────────────────────────────────────
+
+async function loadTags() {
+  try {
+    const res = await fetch("/api/tags");
+    TAGS_DATA = await res.json();
+  } catch (e) {
+    console.error("Failed to load tags:", e);
+  }
+  refreshTagFilter();
+  refreshTagManagerList();
+}
+
+async function saveTags() {
+  try {
+    await fetch("/api/tags", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(TAGS_DATA),
+    });
+  } catch (e) {
+    console.error("Failed to save tags:", e);
+  }
+}
+
+function refreshTagFilter() {
+  const sel = document.getElementById("sel-tag");
+  if (!sel) return;
+  const cur = sel.value;
+  sel.innerHTML = `<option value="">— any —</option>`;
+  for (const t of TAGS_DATA.tags) {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    sel.appendChild(opt);
+  }
+  if (TAGS_DATA.tags.includes(cur)) sel.value = cur;
+}
+
+function refreshTagManagerList() {
+  const ul = document.getElementById("tag-manager-list");
+  if (!ul) return;
+  ul.innerHTML = "";
+  if (TAGS_DATA.tags.length === 0) {
+    ul.innerHTML = `<li style="color:var(--muted);font-size:11px;border:none;background:none;padding:4px 0">No tags defined yet.</li>`;
+    return;
+  }
+  for (const t of TAGS_DATA.tags) {
+    const li = document.createElement("li");
+    li.innerHTML = `<span>${escHtml(t)}</span><button class="tag-delete" title="Delete tag" data-tag="${escHtml(t)}">×</button>`;
+    li.querySelector(".tag-delete").addEventListener("click", () => deleteTag(t));
+    ul.appendChild(li);
+  }
+}
+
+function renderCustomTags(record) {
+  const section = document.getElementById("user-tags-main");
+  const list    = document.getElementById("user-tag-list-main");
+  const addSel  = document.getElementById("sel-add-tag-main");
+  if (!section) return;
+
+  if (!record || TAGS_DATA.tags.length === 0) {
+    section.style.display = "none";
+    return;
+  }
+
+  section.style.display = "";
+  list.innerHTML = "";
+  const assigned = TAGS_DATA.assignments[record.id] || [];
+  for (const t of assigned) {
+    const li = document.createElement("li");
+    li.innerHTML = `<span class="user-tag">${escHtml(t)}<button class="user-tag-remove" title="Remove tag" data-tag="${escHtml(t)}">×</button></span>`;
+    li.querySelector(".user-tag-remove").addEventListener("click", () => removeTagFromGraph(record.id, t));
+    list.appendChild(li);
+  }
+
+  // Populate add-tag select with unassigned tags
+  addSel.innerHTML = `<option value="">+ add tag…</option>`;
+  const unassigned = TAGS_DATA.tags.filter(t => !assigned.includes(t));
+  for (const t of unassigned) {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    addSel.appendChild(opt);
+  }
+  addSel.style.display = unassigned.length > 0 ? "" : "none";
+}
+
+function addTagToGraph(graphId, tag) {
+  if (!TAGS_DATA.assignments[graphId]) TAGS_DATA.assignments[graphId] = [];
+  if (!TAGS_DATA.assignments[graphId].includes(tag)) {
+    TAGS_DATA.assignments[graphId].push(tag);
+    saveTags();
+    renderCustomTags(CURRENT_MAIN_RECORD);
+  }
+}
+
+function removeTagFromGraph(graphId, tag) {
+  const arr = TAGS_DATA.assignments[graphId];
+  if (!arr) return;
+  const idx = arr.indexOf(tag);
+  if (idx !== -1) {
+    arr.splice(idx, 1);
+    if (arr.length === 0) delete TAGS_DATA.assignments[graphId];
+    saveTags();
+    renderCustomTags(CURRENT_MAIN_RECORD);
+  }
+}
+
+function createTag() {
+  const input = document.getElementById("tag-new-name");
+  const name  = input.value.trim();
+  if (!name || TAGS_DATA.tags.includes(name)) return;
+  TAGS_DATA.tags.push(name);
+  saveTags();
+  input.value = "";
+  refreshTagFilter();
+  refreshTagManagerList();
+  if (CURRENT_MAIN_RECORD) renderCustomTags(CURRENT_MAIN_RECORD);
+}
+
+function deleteTag(name) {
+  const idx = TAGS_DATA.tags.indexOf(name);
+  if (idx === -1) return;
+  TAGS_DATA.tags.splice(idx, 1);
+  for (const id of Object.keys(TAGS_DATA.assignments)) {
+    const arr = TAGS_DATA.assignments[id];
+    const i   = arr.indexOf(name);
+    if (i !== -1) {
+      arr.splice(i, 1);
+      if (arr.length === 0) delete TAGS_DATA.assignments[id];
+    }
+  }
+  saveTags();
+  // If the tag filter was set to the deleted tag, clear it and re-cascade
+  const sel = document.getElementById("sel-tag");
+  if (sel && sel.value === name) {
+    sel.value = "";
+    populateDataset("sel-dataset");
+    document.getElementById("sel-dataset").dispatchEvent(new Event("change"));
+    updateMatchCount();
+  }
+  refreshTagFilter();
+  refreshTagManagerList();
+  if (CURRENT_MAIN_RECORD) renderCustomTags(CURRENT_MAIN_RECORD);
 }
 
 function openInMain(id) {
